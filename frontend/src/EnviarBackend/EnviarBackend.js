@@ -1,4 +1,3 @@
-import React, { props } from "react";
 
 const enviaralBackend = (props) =>{
 

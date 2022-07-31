@@ -1,11 +1,15 @@
 import React from "react";
-import './Formulario.css'
 
 function FormularioDatosIdentificacionAccionado (props) {
     return(
-        <form className="formulario">
+        <form className="formulario" class="d-flex flex-column col-5">
             <label>Nombre:</label>
             <input id='nombreAccionado' onChange={()=>props.setnombreAccionado(document.getElementById('nombreAccionado').value) }></input>
+            <label>¿Es persona jurídica?</label>
+            <select id='tipoPersonaAccionado' onClick={()=>{props.setTipoPersonaAccionado(document.getElementById('tipoPersonaAccionado').value)}}>
+                <option value={0}>No</option>
+                <option value={1}>Sí</option>
+            </select>
             <label>Tipo de documento:</label>
             <select id='tipoDocumentoAccionado' onClick={()=>{props.settipoDocumentoAccionado(document.getElementById('tipoDocumentoAccionado').value)}}>
                 <option value='Sin documento'>Seleccionar</option>            

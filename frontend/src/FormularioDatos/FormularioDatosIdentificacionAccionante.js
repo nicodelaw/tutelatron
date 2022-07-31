@@ -1,5 +1,4 @@
 import React from "react";
-import './Formulario.css'
 
 const FormularioDatosIdentificacionAccionante = (props) =>{ 
 
@@ -10,9 +9,9 @@ const FormularioDatosIdentificacionAccionante = (props) =>{
     }
 
     return(
-        <form className="formulario">
+        <form className="formulario" class="d-flex flex-column col-5">
             <label>Nombre:</label>
-            <input id='nombreAccionanteID' onChange={()=>props.setnombreAccionante(document.getElementById('nombreAccionanteID').value) }></input>
+            <input class="form-control-file" id='nombreAccionanteID' onChange={()=>props.setnombreAccionante(document.getElementById('nombreAccionanteID').value) }></input>
             <label>Tipo de documento:</label>
             <select id='tipoDocumentoAccionante' onChange={()=>{props.settipoDocumentoAccionante(document.getElementById('tipoDocumentoAccionante').value) }}>
                 <option value='Sin documento'>Seleccionar</option>            
@@ -28,6 +27,14 @@ const FormularioDatosIdentificacionAccionante = (props) =>{
             <input id='direccionAccionante' onChange={()=>props.setdireccionAccionante(document.getElementById('direccionAccionante').value) }></input>
             <label>Correo electrónico:</label>
             <input id='correoAccionante' onChange={()=>props.setcorreoAccionante(document.getElementById('correoAccionante').value) }></input>
+            <label>¿Actúa por medio de apoderado?</label>
+            <select 
+                id='actuaporapoderado' 
+                onChange={()=>{props.setActuaApoderado(document.getElementById('actuaporapoderado').value)}}
+                >
+                <option value={0}>No</option>
+                <option value={1}>Sí</option>
+            </select>
         </form>
     );
 };

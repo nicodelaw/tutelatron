@@ -41,4 +41,4 @@ const descargarTutela = (props) => {
     fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
     };
 
-export { descargarTutela };
+module.exports =  { descargarTutela };

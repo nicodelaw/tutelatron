@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { CreateTutela } from './CrearTutela/createTutela';
 import { FormularioDatosIdentificacionAccionante } from './FormularioDatos/FormularioDatosIdentificacionAccionante';
+import { FormularioApoderadoAccionante } from './FormularioDatos/FormularioApoderadoAccionante';
 import { FormularioDatosIdentificacionAccionado } from './FormularioDatos/FormularioDatosIdentificacionAccionado';
+import { FormularioRepresentanteAccionado } from './FormularioDatos/FormularioRepresentanteAccionado';
 import { FormularioDatosTutela } from './FormularioDatos/FormularioDatosTutela';
-import { enviaralBackend } from './EnviarBackend/EnviarBackend';
-import './App.css';
+import { FRespuestaDxPeticion } from './FormularioDatos/FRespuestaDxPeticion';
+import { FContenidoRDxPeticion } from './FormularioDatos/FContenidoRDxPeticion';
+import { BotonDescarga } from './FormularioDatos/BotonDescarga';
+import { Nav } from './FormularioDatos/Nav';
 
 function App(props) {
   
@@ -15,6 +18,7 @@ function App(props) {
   const [domicilioAccionante, setdomicilioAccionante] = useState('_____________');
   const [direccionAccionante, setdireccionAccionante]= useState('_____________');
   const [correoAccionante, setcorreoAccionante] = useState('______________');
+  const [actuaApoderado, setActuaApoderado] = useState(0);
  
   const [nombreAccionado, setnombreAccionado] = useState('____________' );
   const [tipoDocumentoAccionado, settipoDocumentoAccionado ] = useState('______________' );
@@ -28,16 +32,71 @@ function App(props) {
   const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('______');
   const [fechaRadicacionDerechoPeticion, setFechaRadicacionDerechoPeticion] = useState('_____________');
   const [municipioRadicacionDerechoPeticion, setMunicipioRadicacionDerechoPeticion] = useState('__________');
-  const [respuestaDerechoDePeticion, setRespuestaDerechoDePeticion] = useState(false);
+  const [respuestaDerechoDePeticion, setRespuestaDerechoDePeticion] = useState(0);
   const [fechaRespuestaDerechoDePeticion, setFechaRespuestaDerechoDePeticion] = useState('___________');
+  const [contenidoRespuestaDerechoPeticion, setcontenidoRespuestaDerechoPeticion] = useState(0);
   const [fechaSolicitudTiempoDerechoPeticion, setFechaSolicitudTiempoDerechoPeticion] =useState('__________');
-  const [segundaRespuestaDerechoPeticion, setSegundaRespuestaDerechoPeticion] = useState('___________');
+  const [segundaRespuestaDerechoPeticion, setSegundaRespuestaDerechoPeticion] = useState('___________'); 
+  const [tipoPersonaAccionado, setTipoPersonaAccionado] = useState(0)
 
-  
   return (
     <div className="App">
-      <form id='formularioCreacion' onSubmit={(event)=>{event.preventDefault()}}>
-        <CreateTutela 
+      <Nav></Nav>
+      <form class="d-flex align-items-center flex-column bg-light" id='formularioCreacion' onSubmit={(event)=>{event.preventDefault()}}>
+       
+        <h1>Datos accionante:</h1>
+        <FormularioDatosIdentificacionAccionante 
+          setnombreAccionante={nombreAccionante => setnombreAccionante(nombreAccionante)}
+          settipoDocumentoAccionante={tipoDocumentoAccionante=>settipoDocumentoAccionante(tipoDocumentoAccionante)}
+          setMayoriaEdadAccionante={mayoriaEdadAccionante=>setMayoriaEdadAccionante(mayoriaEdadAccionante)}
+          setMayoriaEdadAccionado={mayoriaEdadAccionado=>setMayoriaEdadAccionado(mayoriaEdadAccionado)}
+          setnumeroDocumentoAccionante={numeroDocumentoAccionante=>setnumeroDocumentoAccionante(numeroDocumentoAccionante)}
+          setdomicilioAccionante={domicilioAccionante=>setdomicilioAccionante(domicilioAccionante)}
+          setdireccionAccionante={direccionAccionante=>setdireccionAccionante(direccionAccionante)}
+          setcorreoAccionante={correoAccionante=>setcorreoAccionante(correoAccionante)}
+          setActuaApoderado={actuaApoderado=>setActuaApoderado(actuaApoderado)}
+          />
+
+        <FormularioApoderadoAccionante
+          actuaApoderado={actuaApoderado}
+        />
+
+        <h1>Datos accionado:</h1>
+        <FormularioDatosIdentificacionAccionado 
+          setnombreAccionado={nombreAccionado => setnombreAccionado(nombreAccionado)}
+          settipoDocumentoAccionado={tipoDocumentoAccionado=>settipoDocumentoAccionado(tipoDocumentoAccionado)}
+          setnumeroDocumentoAccionado={numeroDocumentoAccionado=>setnumeroDocumentoAccionado(numeroDocumentoAccionado)}
+          setdomicilioAccionado={domicilioAccionado=>setdomicilioAccionado(domicilioAccionado)}
+          setdireccionAccionado={direccionAccionado=>setdireccionAccionado(direccionAccionado)}
+          setcorreoAccionado={correoAccionado=>setcorreoAccionado(correoAccionado)}
+          setTipoPersonaAccionado={tipoPersonaAccionado=>setTipoPersonaAccionado(tipoPersonaAccionado)}
+        />
+        <FormularioRepresentanteAccionado 
+          tipoPersonaAccionado={tipoPersonaAccionado}
+        />
+
+        <h1>Datos Tutela:</h1>
+        <FormularioDatosTutela 
+          setTipoTutela={tipoTutela=>setTipoTutela(tipoTutela)}
+          setTipoDerechoDePeticion={tipoDerechoDePeticion=> setTipoDerechoDePeticion(tipoDerechoDePeticion)}
+          setFechaRadicacionDerechoPeticion={fechaRadicacionDerechoPeticion=> setFechaRadicacionDerechoPeticion(fechaRadicacionDerechoPeticion)}
+          setMunicipioRadicacionDerechoPeticion={municipioRadicacionDerechoPeticion=>setMunicipioRadicacionDerechoPeticion(municipioRadicacionDerechoPeticion)}
+          setRespuestaDerechoDePeticion={respuestaDerechoDePeticion=>setRespuestaDerechoDePeticion(respuestaDerechoDePeticion)}
+          setFechaRespuestaDerechoDePeticion={fechaRespuestaDerechoDePeticion=>setFechaRespuestaDerechoDePeticion(fechaRespuestaDerechoDePeticion)}
+          setFechaSolicitudTiempoDerechoPeticion={fechaSolicitudTiempoDerechoPeticion=>setFechaSolicitudTiempoDerechoPeticion(fechaSolicitudTiempoDerechoPeticion)}
+          setSegundaRespuestaDerechoPeticion={segundaRespuestaDerechoPeticion=>setSegundaRespuestaDerechoPeticion(segundaRespuestaDerechoPeticion)}
+        />
+        
+        <FRespuestaDxPeticion 
+          setcontenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion=>setcontenidoRespuestaDerechoPeticion(contenidoRespuestaDerechoPeticion)}
+          respuestaDerechoDePeticion={respuestaDerechoDePeticion}
+        />
+
+        <FContenidoRDxPeticion 
+          contenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion}
+        />
+
+        <BotonDescarga 
           nombreAccionante={nombreAccionante}
           tipoDocumentoAccionante={tipoDocumentoAccionante}
           numeroDocumentoAccionante={numeroDocumentoAccionante}
@@ -47,6 +106,7 @@ function App(props) {
           correoAccionante={correoAccionante}
 
           nombreAccionado={nombreAccionado}
+          tipoPersonaAccionado={tipoPersonaAccionado}
           tipoDocumentoAccionado={tipoDocumentoAccionado}
           mayoriaEdadAccionado={mayoriaEdadAccionado}
           numeroDocumentoAccionado={numeroDocumentoAccionado}
@@ -63,44 +123,6 @@ function App(props) {
           fechaSolicitudTiempoDerechoPeticion={fechaSolicitudTiempoDerechoPeticion}
           segundaRespuestaDerechoPeticion={segundaRespuestaDerechoPeticion}
         />
-        <p>Datos accionante:</p>
-        <FormularioDatosIdentificacionAccionante 
-          setnombreAccionante={nombreAccionante => setnombreAccionante(nombreAccionante)}
-          settipoDocumentoAccionante={tipoDocumentoAccionante=>settipoDocumentoAccionante(tipoDocumentoAccionante)}
-          setMayoriaEdadAccionante={mayoriaEdadAccionante=>setMayoriaEdadAccionante(mayoriaEdadAccionante)}
-          setMayoriaEdadAccionado={mayoriaEdadAccionado=>setMayoriaEdadAccionado(mayoriaEdadAccionado)}
-          setnumeroDocumentoAccionante={numeroDocumentoAccionante=>setnumeroDocumentoAccionante(numeroDocumentoAccionante)}
-          setdomicilioAccionante={domicilioAccionante=>setdomicilioAccionante(domicilioAccionante)}
-          setdireccionAccionante={direccionAccionante=>setdireccionAccionante(direccionAccionante)}
-          setcorreoAccionante={correoAccionante=>setcorreoAccionante(correoAccionante)}
-        />
-        <p>Datos accionado:</p>
-        <FormularioDatosIdentificacionAccionado 
-          setnombreAccionado={nombreAccionado => setnombreAccionado(nombreAccionado)}
-          settipoDocumentoAccionado={tipoDocumentoAccionado=>settipoDocumentoAccionado(tipoDocumentoAccionado)}
-          setnumeroDocumentoAccionado={numeroDocumentoAccionado=>setnumeroDocumentoAccionado(numeroDocumentoAccionado)}
-          setdomicilioAccionado={domicilioAccionado=>setdomicilioAccionado(domicilioAccionado)}
-          setdireccionAccionado={direccionAccionado=>setdireccionAccionado(direccionAccionado)}
-          setcorreoAccionado={correoAccionado=>setcorreoAccionado(correoAccionado)}
-        />
-        <p>Datos Tutela:</p>
-        <FormularioDatosTutela 
-          setTipoTutela={tipoTutela=>setTipoTutela(tipoTutela)}
-          setTipoDerechoDePeticion={tipoDerechoDePeticion=> setTipoDerechoDePeticion(tipoDerechoDePeticion)}
-          setFechaRadicacionDerechoPeticion={fechaRadicacionDerechoPeticion=> setFechaRadicacionDerechoPeticion(fechaRadicacionDerechoPeticion)}
-          setMunicipioRadicacionDerechoPeticion={municipioRadicacionDerechoPeticion=>setMunicipioRadicacionDerechoPeticion(municipioRadicacionDerechoPeticion)}
-          setRespuestaDerechoDePeticion={respuestaDerechoDePeticion=>setRespuestaDerechoDePeticion(respuestaDerechoDePeticion)}
-          setFechaRespuestaDerechoDePeticion={fechaRespuestaDerechoDePeticion=>setFechaRespuestaDerechoDePeticion(fechaRespuestaDerechoDePeticion)}
-          setFechaSolicitudTiempoDerechoPeticion={fechaSolicitudTiempoDerechoPeticion=>setFechaSolicitudTiempoDerechoPeticion(fechaSolicitudTiempoDerechoPeticion)}
-          setSegundaRespuestaDerechoPeticion={segundaRespuestaDerechoPeticion=>setSegundaRespuestaDerechoPeticion(segundaRespuestaDerechoPeticion)}
-        />
-        <p>Descargar</p>
-        <button action="/add" method="post" type="submit"
-            onClick={()=>{enviaralBackend(props)}}
-            className="botonDescarga"
-        > 
-            Descargar 
-        </button> 
       </form>
     </div>
   );

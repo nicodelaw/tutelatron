@@ -1,45 +1,34 @@
 import React from "react";
 
 const FormularioDatosTutela = (props) =>{
-    
-    if (!props.respuestaDerechoDePeticion){
-         <div></div>       
-    }else{
-        <input 
-            type="date"
-            id="fechaRespuestaDerechoDePeticion"
-            onChange={()=>props.setFechaRespuestaDerechoDePeticion(document.getElementById('fechaRespuestaDerechoDePeticion').value)}
-        />
-    }
-
     return(
-        <form className="formulario">
+        <form className="formulario" class="d-flex flex-column col-5">
+            <label>Derechos Fundamentales vulnerados:</label>
             <select  id="tipoTutelaOption" onClick={()=>props.setTipoTutela(document.getElementById('tipoTutelaOption').value)}>
                 <option value='Seleccionar'>Seleccionar</option>            
-                <option value="Derecho de Petición" >Derecho de Petición</option>
+                <option value='Derecho de Petición' >Derecho de Petición</option>
             </select>
+            <label>Tipo de Derecho de Petición radicado:</label>
             <select  id="tipoDerechoDePeticionOption" onClick={()=>props.setTipoDerechoDePeticion(document.getElementById('tipoDerechoDePeticionOption').value)}>
                 <option value='Seleccionar'>Seleccionar</option>            
                 <option value="SolicitudInformacion" >Solicitud de Información</option>
                 <option value="SolicitudDocumentos" >Solicitud de Documentos</option>
                 <option value="SolicitudConsulta" >Consulta</option>
             </select>
+            <label>Fecha de radicación del Derecho de Petición:</label>
             <input 
                 type="date" 
                 id="fechaRadicacionDerechoPeticion"
                 onChange={()=>props.setFechaRadicacionDerechoPeticion(document.getElementById('fechaRadicacionDerechoPeticion').value)}
             />
-            <select id="municipioRadicacionDerechoPeticionOption" onClick={()=>props.setMunicipioRadicacionDerechoPeticion(document.getElementById('municipioRadicacionDerechoPeticionOption').value)}>
-                <option value='Seleccionar'>Seleccionar</option>            
-                <option value="Bogotá">Bogotá</option>
-                <option value="Cartagena">Cartagena</option>
+            <label>Municipio donde se radicó el Derecho de Petición:</label>
+            <input id="municipioRadicacionDerechoPeticionOption" onClick={()=>props.setMunicipioRadicacionDerechoPeticion(document.getElementById('municipioRadicacionDerechoPeticionOption').value)}>
+            </input>
+            <label>¿Se contestó el Derecho de Petición?</label>
+            <select id="respuestaDerechoDePeticion" onClick={()=>props.setRespuestaDerechoDePeticion(document.getElementById('respuestaDerechoDePeticion').value)}>
+                <option value={0}>No</option>
+                <option value={1}>Sí</option>
             </select>
-            <p>¿Se contestó el Derecho de Petición?</p>
-            <label>Sí</label>
-            <input type="checkbox" onClick={()=>props.setRespuestaDerechoDePeticion(true)} />
-            <label>No</label>
-            <input type="checkbox" onClick={()=>props.setRespuestaDerechoDePeticion(false)} />
-
         </form>
     )
 }

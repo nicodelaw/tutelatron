@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const { descargarTutela } = require('../frontend/src/CrearTutela/descargarTutela');
+const { descargarTutela } = require('./CrearTutela/descargarTutela');
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
