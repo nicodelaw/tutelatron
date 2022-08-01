@@ -1,7 +1,7 @@
 import React from "react";
 
-function FRespuestaDxPeticion(props){
-    if(props.respuestaDerechoDePeticion == 0){
+function FContenidoRDxPeticionTiempoAdicional(props){
+    if(!props.respuestaTiempoAdicional){
         return(null)
     }
     else{
@@ -10,20 +10,19 @@ function FRespuestaDxPeticion(props){
                 <label>Fecha de respuesta del derecho de petición:</label>
                 <input 
                     type="date"
-                    id="fechaRespuestaDerechoDePeticion"
-                    onChange={()=>props.setFechaRespuestaDerechoDePeticion(document.getElementById('fechaRespuestaDerechoDePeticion').value)}
+                    id="fechaRespuestaDerechoDePeticionTAdicional"
+                    onChange={()=>props.setFechaRespuestaDerechoDePeticionTAdicional(document.getElementById('fechaRespuestaDerechoDePeticionTAdicional').value)}
                 />
                 <label>El derecho de petición fue contestado, pero:</label>
-                <select id="contenidoRespuestaPeticion" onChange={()=>props.setcontenidoRespuestaDerechoPeticion(document.getElementById('contenidoRespuestaPeticion').value)}>
+                <select id="contenidoRespuestaPeticionTAdicional" onChange={()=>props.setContenidoRespuestaPeticionTAdicional(document.getElementById('contenidoRespuestaPeticionTAdicional').value)}>
                     <option value={0}></option>
                     <option value={1}>De forma incompleta</option>
                     <option value={2}>Con evasivas y sin resolver de fondo</option>
                     <option value={3}>De forma incompleta, con evasivas y sin resolver de fondo </option>
-                    <option value={4}>Solicitando tiempo adicional</option>
                 </select>
             </div>
         )
     }
 }
 
-export { FRespuestaDxPeticion };
+export { FContenidoRDxPeticionTiempoAdicional }

@@ -6,6 +6,7 @@ import { FormularioRepresentanteAccionado } from './FormularioDatos/FormularioRe
 import { FormularioDatosTutela } from './FormularioDatos/FormularioDatosTutela';
 import { FRespuestaDxPeticion } from './FormularioDatos/FRespuestaDxPeticion';
 import { FContenidoRDxPeticion } from './FormularioDatos/FContenidoRDxPeticion';
+import { FContenidoRDxPeticionTiempoAdicional } from './FormularioDatos/FContenidoRDxPeticionTiempoAdicional';
 import { BotonDescarga } from './FormularioDatos/BotonDescarga';
 import { Nav } from './FormularioDatos/Nav';
 
@@ -27,17 +28,22 @@ function App(props) {
   const [domicilioAccionado, setdomicilioAccionado] = useState('_____________');
   const [direccionAccionado, setdireccionAccionado]= useState('_____________');
   const [correoAccionado, setcorreoAccionado] = useState('______________');
+  const [tipoPersonaAccionado, setTipoPersonaAccionado] = useState(0)
 
   const [tipoTutela, setTipoTutela ] = useState('__________');
   const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('______');
   const [fechaRadicacionDerechoPeticion, setFechaRadicacionDerechoPeticion] = useState('_____________');
   const [municipioRadicacionDerechoPeticion, setMunicipioRadicacionDerechoPeticion] = useState('__________');
   const [respuestaDerechoDePeticion, setRespuestaDerechoDePeticion] = useState(0);
+
   const [fechaRespuestaDerechoDePeticion, setFechaRespuestaDerechoDePeticion] = useState('___________');
   const [contenidoRespuestaDerechoPeticion, setcontenidoRespuestaDerechoPeticion] = useState(0);
   const [fechaSolicitudTiempoDerechoPeticion, setFechaSolicitudTiempoDerechoPeticion] =useState('__________');
+
   const [segundaRespuestaDerechoPeticion, setSegundaRespuestaDerechoPeticion] = useState('___________'); 
-  const [tipoPersonaAccionado, setTipoPersonaAccionado] = useState(0)
+  const [respuestaTiempoAdicional, setRespuestaTiempoAdicional] = useState(0);
+  const [fechaRespuestaDerechoDePeticionTAdicional, setFechaRespuestaDerechoDePeticionTAdicional] = useState('_______')
+  const [contenidoRespuestaPeticionTAdicional, setContenidoRespuestaPeticionTAdicional] = useState(0)
 
   return (
     <div className="App">
@@ -90,10 +96,19 @@ function App(props) {
         <FRespuestaDxPeticion 
           setcontenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion=>setcontenidoRespuestaDerechoPeticion(contenidoRespuestaDerechoPeticion)}
           respuestaDerechoDePeticion={respuestaDerechoDePeticion}
+
         />
 
         <FContenidoRDxPeticion 
           contenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion}
+          setRespuestaTiempoAdicional={respuestaTiempoAdicional=>setRespuestaTiempoAdicional(respuestaTiempoAdicional)}
+        />
+
+        <FContenidoRDxPeticionTiempoAdicional 
+          respuestaTiempoAdicional={respuestaTiempoAdicional}
+          setFechaRespuestaDerechoDePeticionTAdicional={fechaRespuestaDerechoDePeticionTAdicional=>setFechaRespuestaDerechoDePeticionTAdicional(fechaRespuestaDerechoDePeticionTAdicional)}
+          setContenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional=>setContenidoRespuestaPeticionTAdicional(contenidoRespuestaPeticionTAdicional)}
+
         />
 
         <BotonDescarga 
