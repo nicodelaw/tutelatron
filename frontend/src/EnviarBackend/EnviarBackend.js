@@ -25,7 +25,10 @@ const enviaralBackend = (props) =>{
     const fechaRespuestaDerechoDePeticion = props.fechaRespuestaDerechoDePeticion;
     const fechaSolicitudTiempoDerechoPeticion = props.fechaSolicitudTiempoDerechoPeticion;
     const segundaRespuestaDerechoPeticion = props.segundaRespuestaDerechoPeticion;      
-
+    const contenidoRespuestaDerechoPeticion = props.contenidoRespuestaDerechoPeticion;
+    const respuestaTiempoAdicional= props.respuestaTiempoAdicional;
+    const fechaRespuestaDerechoDePeticionTAdicional = props.fechaRespuestaDerechoDePeticionTAdicional;
+    const contenidoRespuestaPeticionTAdicional= props.contenidoRespuestaPeticionTAdicional;
 
     const accionTutelaObjeto = {
         nombreAccionante : nombreAccionante,
@@ -51,8 +54,11 @@ const enviaralBackend = (props) =>{
         respuestaDerechoDePeticion : respuestaDerechoDePeticion,
         fechaRespuestaDerechoDePeticion : fechaRespuestaDerechoDePeticion,
         fechaSolicitudTiempoDerechoPeticion : fechaSolicitudTiempoDerechoPeticion,
-        segundaRespuestaDerechoPeticion : segundaRespuestaDerechoPeticion
-    
+        segundaRespuestaDerechoPeticion : segundaRespuestaDerechoPeticion,
+        contenidoRespuestaDerechoPeticion: contenidoRespuestaDerechoPeticion,
+        respuestaTiempoAdicional: respuestaTiempoAdicional,
+        fechaRespuestaDerechoDePeticionTAdicional: fechaRespuestaDerechoDePeticionTAdicional,
+        contenidoRespuestaPeticionTAdicional: contenidoRespuestaPeticionTAdicional
         };
 
     const accionTutelaObjetoJson = JSON.stringify(accionTutelaObjeto);

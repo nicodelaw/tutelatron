@@ -31,7 +31,7 @@ function App(props) {
   const [tipoPersonaAccionado, setTipoPersonaAccionado] = useState(0)
 
   const [tipoTutela, setTipoTutela ] = useState('__________');
-  const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('______');
+  const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('Seleccionar');
   const [fechaRadicacionDerechoPeticion, setFechaRadicacionDerechoPeticion] = useState('_____________');
   const [municipioRadicacionDerechoPeticion, setMunicipioRadicacionDerechoPeticion] = useState('__________');
   const [respuestaDerechoDePeticion, setRespuestaDerechoDePeticion] = useState(0);
@@ -83,6 +83,7 @@ function App(props) {
 
         <h1>Datos Tutela:</h1>
         <FormularioDatosTutela 
+          tipoDerechoDePeticion={tipoDerechoDePeticion}
           setTipoTutela={tipoTutela=>setTipoTutela(tipoTutela)}
           setTipoDerechoDePeticion={tipoDerechoDePeticion=> setTipoDerechoDePeticion(tipoDerechoDePeticion)}
           setFechaRadicacionDerechoPeticion={fechaRadicacionDerechoPeticion=> setFechaRadicacionDerechoPeticion(fechaRadicacionDerechoPeticion)}
@@ -119,6 +120,7 @@ function App(props) {
           domicilioAccionante={domicilioAccionante}
           direccionAccionante={direccionAccionante}
           correoAccionante={correoAccionante}
+          actuaApoderado={actuaApoderado}
 
           nombreAccionado={nombreAccionado}
           tipoPersonaAccionado={tipoPersonaAccionado}
@@ -136,7 +138,11 @@ function App(props) {
           respuestaDerechoDePeticion={respuestaDerechoDePeticion}
           fechaRespuestaDerechoDePeticion={fechaRespuestaDerechoDePeticion}
           fechaSolicitudTiempoDerechoPeticion={fechaSolicitudTiempoDerechoPeticion}
+          contenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion}
           segundaRespuestaDerechoPeticion={segundaRespuestaDerechoPeticion}
+          respuestaTiempoAdicional={respuestaTiempoAdicional}
+          fechaRespuestaDerechoDePeticionTAdicional={fechaRespuestaDerechoDePeticionTAdicional}
+          contenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional}
         />
       </form>
     </div>

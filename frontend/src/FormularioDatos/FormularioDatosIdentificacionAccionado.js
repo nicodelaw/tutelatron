@@ -16,6 +16,7 @@ function FormularioDatosIdentificacionAccionado (props) {
                 <option value='Cédula de Ciudadanía'>Cédula de ciudadanía</option>
                 <option value='Tarjeta de Identidad'>Tarjeta de Identidad</option>
                 <option value='Pasaporte'>Pasaporte</option>
+                <option value='NIT'>NIT</option>
             </select>
             <label>Número de documento:</label>
             <input id='numeroDocumentoAccionado' onChange={()=>props.setnumeroDocumentoAccionado(document.getElementById('numeroDocumentoAccionado').value) }></input>

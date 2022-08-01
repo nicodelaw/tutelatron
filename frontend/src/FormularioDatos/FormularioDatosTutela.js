@@ -1,6 +1,8 @@
 import React from "react";
+import { FDSolicitudDxPeticion } from './FDSolicitudDxPeticion';
 
 const FormularioDatosTutela = (props) =>{
+
     return(
         <form className="formulario" class="d-flex flex-column col-5">
             <label>Derechos Fundamentales vulnerados:</label>
@@ -11,10 +13,13 @@ const FormularioDatosTutela = (props) =>{
             <label>Tipo de Derecho de Petición radicado:</label>
             <select  id="tipoDerechoDePeticionOption" onClick={()=>props.setTipoDerechoDePeticion(document.getElementById('tipoDerechoDePeticionOption').value)}>
                 <option value='Seleccionar'>Seleccionar</option>            
-                <option value="SolicitudInformacion" >Solicitud de Información</option>
-                <option value="SolicitudDocumentos" >Solicitud de Documentos</option>
-                <option value="SolicitudConsulta" >Consulta</option>
+                <option value='SolicitudInformacion' >Solicitud de Información</option>
+                <option value='SolicitudDocumentos' >Solicitud de Documentos</option>
+                <option value='SolicitudConsulta' >Consulta</option>
             </select>
+            <FDSolicitudDxPeticion 
+                tipoDerechoDePeticion={props.tipoDerechoDePeticion}
+            />
             <label>Fecha de radicación del Derecho de Petición:</label>
             <input 
                 type="date" 
