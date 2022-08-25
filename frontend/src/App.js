@@ -21,6 +21,12 @@ function App(props) {
   const [correoAccionante, setcorreoAccionante] = useState('______________');
   const [actuaApoderado, setActuaApoderado] = useState(0);
  
+  const [nombreApoderadoAccionante, setnombreApoderadoAccionante] = useState('____________');
+  const [tipoDocumentoApoderadoAccionante, settipoDocumentoApoderadoAccionante] = useState('____________');
+  const [numeroDocumentoApoderadoAccionante, setnumeroDocumentoApoderadoAccionante] = useState('____________');
+  const [direccionApoderadoAccionante, setdireccionApoderadoAccionante] = useState('____________');
+  const [correoApoderadoAccionante, setcorreoApoderadoAccionante] = useState('____________');
+
   const [nombreAccionado, setnombreAccionado] = useState('____________' );
   const [tipoDocumentoAccionado, settipoDocumentoAccionado ] = useState('______________' );
   const [mayoriaEdadAccionado, setMayoriaEdadAccionado ] = useState('_________');
@@ -29,6 +35,12 @@ function App(props) {
   const [direccionAccionado, setdireccionAccionado]= useState('_____________');
   const [correoAccionado, setcorreoAccionado] = useState('______________');
   const [tipoPersonaAccionado, setTipoPersonaAccionado] = useState(0)
+
+  const [nombreRepresentanteAccionado, setnombreRepresentanteAccionado] = useState('____________');
+  const [tipoDocumentoRepresentanteAccionado, settipoDocumentoRepresentanteAccionado] = useState('____________');
+  const [numeroDocumentoRepresentanteAccionante, setnumeroDocumentoRepresentanteAccionante] = useState('____________');
+  const [direccionRepresentanteAccionado, setdireccionRepresentanteAccionado] = useState('____________');
+  const [correoRepresentanteAccionado, setcorreoRepresentanteAccionado] = useState('____________');
 
   const [tipoTutela, setTipoTutela ] = useState('__________');
   const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('Seleccionar');
@@ -65,6 +77,11 @@ function App(props) {
 
         <FormularioApoderadoAccionante
           actuaApoderado={actuaApoderado}
+          setnombreApoderadoAccionante={nombreApoderadoAccionante=>setnombreApoderadoAccionante(nombreApoderadoAccionante)}
+          settipoDocumentoApoderadoAccionante={tipoDocumentoApoderadoAccionante=>settipoDocumentoApoderadoAccionante(tipoDocumentoApoderadoAccionante)}
+          setnumeroDocumentoApoderadoAccionante={numeroDocumentoApoderadoAccionante=>setnumeroDocumentoApoderadoAccionante(numeroDocumentoApoderadoAccionante)}
+          setdireccionApoderadoAccionante={direccionApoderadoAccionante=>setdireccionApoderadoAccionante(direccionApoderadoAccionante)}
+          setcorreoApoderadoAccionante={correoApoderadoAccionante=>setcorreoApoderadoAccionante(correoApoderadoAccionante)}
         />
 
         <h1>Datos accionado:</h1>
@@ -79,6 +96,11 @@ function App(props) {
         />
         <FormularioRepresentanteAccionado 
           tipoPersonaAccionado={tipoPersonaAccionado}
+          setnombreRepresentanteAccionado={nombreRepresentanteAccionado=>setnombreRepresentanteAccionado(nombreRepresentanteAccionado)}
+          settipoDocumentoRepresentanteAccionado={tipoDocumentoRepresentanteAccionado=>settipoDocumentoRepresentanteAccionado(tipoDocumentoRepresentanteAccionado)}
+          setnumeroDocumentoRepresentanteAccionante={numeroDocumentoRepresentanteAccionante=>setnumeroDocumentoRepresentanteAccionante(numeroDocumentoRepresentanteAccionante)}
+          setdireccionRepresentanteAccionado={direccionRepresentanteAccionado=>setdireccionRepresentanteAccionado(direccionRepresentanteAccionado)}
+          setcorreoRepresentanteAccionado={correoRepresentanteAccionado=>setcorreoRepresentanteAccionado(correoRepresentanteAccionado)}
         />
 
         <h1>Datos Tutela:</h1>
@@ -95,9 +117,9 @@ function App(props) {
         />
         
         <FRespuestaDxPeticion 
-          setcontenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion=>setcontenidoRespuestaDerechoPeticion(contenidoRespuestaDerechoPeticion)}
           respuestaDerechoDePeticion={respuestaDerechoDePeticion}
-
+          setcontenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion=>setcontenidoRespuestaDerechoPeticion(contenidoRespuestaDerechoPeticion)}
+          setFechaRespuestaDerechoDePeticion={fechaRespuestaDerechoDePeticion=>setFechaRespuestaDerechoDePeticion(fechaRespuestaDerechoDePeticion)}
         />
 
         <FContenidoRDxPeticion 
@@ -109,7 +131,6 @@ function App(props) {
           respuestaTiempoAdicional={respuestaTiempoAdicional}
           setFechaRespuestaDerechoDePeticionTAdicional={fechaRespuestaDerechoDePeticionTAdicional=>setFechaRespuestaDerechoDePeticionTAdicional(fechaRespuestaDerechoDePeticionTAdicional)}
           setContenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional=>setContenidoRespuestaPeticionTAdicional(contenidoRespuestaPeticionTAdicional)}
-
         />
 
         <BotonDescarga 
@@ -122,6 +143,12 @@ function App(props) {
           correoAccionante={correoAccionante}
           actuaApoderado={actuaApoderado}
 
+          nombreApoderadoAccionante={nombreApoderadoAccionante}
+          tipoDocumentoApoderadoAccionante={tipoDocumentoApoderadoAccionante}
+          numeroDocumentoApoderadoAccionante={numeroDocumentoApoderadoAccionante}
+          direccionApoderadoAccionante={direccionApoderadoAccionante}
+          correoApoderadoAccionante={correoApoderadoAccionante}
+
           nombreAccionado={nombreAccionado}
           tipoPersonaAccionado={tipoPersonaAccionado}
           tipoDocumentoAccionado={tipoDocumentoAccionado}
@@ -130,6 +157,12 @@ function App(props) {
           domicilioAccionado={domicilioAccionado}
           direccionAccionado={direccionAccionado}
           correoAccionado={correoAccionado}
+
+          nombreRepresentanteAccionado={nombreRepresentanteAccionado}
+          tipoDocumentoRepresentanteAccionado={tipoDocumentoRepresentanteAccionado}
+          numeroDocumentoRepresentanteAccionante={numeroDocumentoRepresentanteAccionante}
+          direccionRepresentanteAccionado={direccionRepresentanteAccionado}
+          correoRepresentanteAccionado={correoRepresentanteAccionado}
 
           tipoTutela={tipoTutela}
           tipoDerechoDePeticion={tipoDerechoDePeticion}

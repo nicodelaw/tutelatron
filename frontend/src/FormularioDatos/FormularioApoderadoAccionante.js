@@ -11,7 +11,7 @@ function FormularioApoderadoAccionante(props){
                 <label>Nombre Apoderado:</label>
                 <input class="form-control-file" id='nombreApoderadoAccionanteID' onChange={()=>props.setnombreApoderadoAccionante(document.getElementById('nombreApoderadoAccionanteID').value) }></input>
                 <label>Tipo de documento Apoderado:</label>
-                <select id='tipoDocumentoApoderadoAccionante' onChange={()=>{props.settipoDocumentoAccionante(document.getElementById('tipoDocumentoApoderadoAccionante').value) }}>
+                <select id='tipoDocumentoApoderadoAccionante' onChange={()=>{props.settipoDocumentoApoderadoAccionante(document.getElementById('tipoDocumentoApoderadoAccionante').value) }}>
                     <option value='Sin documento'>Seleccionar</option>            
                     <option value='Cédula de Ciudadanía'>Cédula de ciudadanía</option>
                     <option value='Pasaporte'>Pasaporte</option>

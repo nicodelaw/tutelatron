@@ -6,7 +6,7 @@ function FormularioRepresentanteAccionado (props){
     } else {
         return(
             <form className="formulario" class="d-flex flex-column col-4">
-                <h2>Datos Representante</h2>
+                <h2>Datos Representante</h2> 
                 <label>Nombre Representante:</label>
                 <input class="form-control-file" id='nombreRepresentanteAccionadoID' onChange={()=>props.setnombreRepresentanteAccionado(document.getElementById('nombreRepresentanteAccionadoID').value) }></input>
                 <label>Tipo de documento Representante:</label>
