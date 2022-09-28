@@ -43,14 +43,19 @@ function App(props) {
   const [correoRepresentanteAccionado, setcorreoRepresentanteAccionado] = useState('____________');
 
   const [tipoTutela, setTipoTutela ] = useState('__________');
-  const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('Seleccionar');
+  const [contenidoRespuestaDerechoPeticionTEXTO, setContenidoRespuestaDerechoPeticionTEXTO] = useState('_____________')
+  const [tipoDerechoDePeticion, setTipoDerechoDePeticion] = useState('__________');
+  const [tipoDerechoDePeticionInformacion, setTipoDerechoDePeticionInformacion] = useState(false);
+  const [tipoDerechoDePeticionDocumentos, setTipoDerechoDePeticionDocumentos] = useState(false);
+  const [tipoDerechoDePeticionConsulta, setTipoDerechoDePeticionConsulta] = useState(false);
   const [fechaRadicacionDerechoPeticion, setFechaRadicacionDerechoPeticion] = useState('_____________');
   const [municipioRadicacionDerechoPeticion, setMunicipioRadicacionDerechoPeticion] = useState('__________');
+  
   const [respuestaDerechoDePeticion, setRespuestaDerechoDePeticion] = useState(0);
-
   const [fechaRespuestaDerechoDePeticion, setFechaRespuestaDerechoDePeticion] = useState('___________');
   const [contenidoRespuestaDerechoPeticion, setcontenidoRespuestaDerechoPeticion] = useState(0);
   const [fechaSolicitudTiempoDerechoPeticion, setFechaSolicitudTiempoDerechoPeticion] =useState('__________');
+  const [justificacionDerechoDePeticion, setJustificacionDerechoDePeticion]= useState('___________');
 
   const [segundaRespuestaDerechoPeticion, setSegundaRespuestaDerechoPeticion] = useState('___________'); 
   const [respuestaTiempoAdicional, setRespuestaTiempoAdicional] = useState(0);
@@ -106,8 +111,16 @@ function App(props) {
         <h1>Datos Tutela:</h1>
         <FormularioDatosTutela 
           tipoDerechoDePeticion={tipoDerechoDePeticion}
+          contenidoRespuestaDerechoPeticionTEXTO={contenidoRespuestaDerechoPeticionTEXTO}
+          tipoDerechoDePeticionInformacion={tipoDerechoDePeticionInformacion}
+          tipoDerechoDePeticionDocumentos={tipoDerechoDePeticionDocumentos}
+          tipoDerechoDePeticionConsulta={tipoDerechoDePeticionConsulta}
+          setTipoDerechoDePeticionInformacion={tipoDerechoDePeticionInformacion=>setTipoDerechoDePeticionInformacion(tipoDerechoDePeticionInformacion)}
+          setTipoDerechoDePeticionDocumentos={tipoDerechoDePeticionDocumentos=>setTipoDerechoDePeticionDocumentos(tipoDerechoDePeticionDocumentos)}
+          setTipoDerechoDePeticionConsulta={tipoDerechoDePeticionConsulta=>setTipoDerechoDePeticionConsulta(tipoDerechoDePeticionConsulta)}
           setTipoTutela={tipoTutela=>setTipoTutela(tipoTutela)}
           setTipoDerechoDePeticion={tipoDerechoDePeticion=> setTipoDerechoDePeticion(tipoDerechoDePeticion)}
+          setContenidoRespuestaDerechoPeticionTEXTO = {contenidoRespuestaDerechoPeticionTEXTO=>setContenidoRespuestaDerechoPeticionTEXTO(contenidoRespuestaDerechoPeticionTEXTO)}
           setFechaRadicacionDerechoPeticion={fechaRadicacionDerechoPeticion=> setFechaRadicacionDerechoPeticion(fechaRadicacionDerechoPeticion)}
           setMunicipioRadicacionDerechoPeticion={municipioRadicacionDerechoPeticion=>setMunicipioRadicacionDerechoPeticion(municipioRadicacionDerechoPeticion)}
           setRespuestaDerechoDePeticion={respuestaDerechoDePeticion=>setRespuestaDerechoDePeticion(respuestaDerechoDePeticion)}
@@ -124,6 +137,8 @@ function App(props) {
 
         <FContenidoRDxPeticion 
           contenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion}
+          justificacionDerechoDePeticion={justificacionDerechoDePeticion}
+          setJustificacionDerechoDePeticion={justificacionDerechoDePeticion=>setJustificacionDerechoDePeticion(justificacionDerechoDePeticion)}
           setRespuestaTiempoAdicional={respuestaTiempoAdicional=>setRespuestaTiempoAdicional(respuestaTiempoAdicional)}
         />
 
@@ -166,6 +181,11 @@ function App(props) {
 
           tipoTutela={tipoTutela}
           tipoDerechoDePeticion={tipoDerechoDePeticion}
+          tipoDerechoDePeticionInformacion={tipoDerechoDePeticionInformacion}
+          tipoDerechoDePeticionDocumentos={tipoDerechoDePeticionDocumentos}
+          tipoDerechoDePeticionConsulta={tipoDerechoDePeticionConsulta}
+          contenidoRespuestaDerechoPeticionTEXTO={contenidoRespuestaDerechoPeticionTEXTO}
+          justificacionDerechoDePeticion={justificacionDerechoDePeticion}
           fechaRadicacionDerechoPeticion={fechaRadicacionDerechoPeticion}
           municipioRadicacionDerechoPeticion={municipioRadicacionDerechoPeticion}
           respuestaDerechoDePeticion={respuestaDerechoDePeticion}

@@ -1,4 +1,3 @@
-
 const enviaralBackend = (props) =>{
 
     const nombreAccionante = props.nombreAccionante;
@@ -32,13 +31,18 @@ const enviaralBackend = (props) =>{
     const correoRepresentanteAccionado= props.correoRepresentanteAccionado;
   
     const tipoTutela = props.tipoTutela;
+    const contenidoRespuestaDerechoPeticionTEXTO = props.contenidoRespuestaDerechoPeticionTEXTO;
     const tipoDerechoDePeticion = props.tipoDerechoDePeticion;
+    const tipoDerechoDePeticionInformacion= props.tipoDerechoDePeticionInformacion;
+    const tipoDerechoDePeticionDocumentos = props.tipoDerechoDePeticionDocumentos;
+    const tipoDerechoDePeticionConsulta = props.tipoDerechoDePeticionConsulta;
     const fechaRadicacionDerechoPeticion = props.fechaRadicacionDerechoPeticion;
     const municipioRadicacionDerechoPeticion = props.municipioRadicacionDerechoPeticion;
     const respuestaDerechoDePeticion = props.respuestaDerechoDePeticion;
     const fechaRespuestaDerechoDePeticion = props.fechaRespuestaDerechoDePeticion;
     const fechaSolicitudTiempoDerechoPeticion = props.fechaSolicitudTiempoDerechoPeticion;
     const segundaRespuestaDerechoPeticion = props.segundaRespuestaDerechoPeticion;      
+    const justificacionDerechoDePeticion = props.justificacionDerechoDePeticion;
     const contenidoRespuestaDerechoPeticion = props.contenidoRespuestaDerechoPeticion;
     const respuestaTiempoAdicional= props.respuestaTiempoAdicional;
     const fechaRespuestaDerechoDePeticionTAdicional = props.fechaRespuestaDerechoDePeticionTAdicional;
@@ -77,12 +81,17 @@ const enviaralBackend = (props) =>{
       
         tipoTutela : tipoTutela, 
         tipoDerechoDePeticion : tipoDerechoDePeticion,
+        tipoDerechoDePeticionInformacion : tipoDerechoDePeticionInformacion,
+        tipoDerechoDePeticionDocumentos : tipoDerechoDePeticionDocumentos,
+        tipoDerechoDePeticionConsulta : tipoDerechoDePeticionConsulta,
+        contenidoRespuestaDerechoPeticionTEXTO: contenidoRespuestaDerechoPeticionTEXTO,
         fechaRadicacionDerechoPeticion : fechaRadicacionDerechoPeticion,
         municipioRadicacionDerechoPeticion : municipioRadicacionDerechoPeticion,
         respuestaDerechoDePeticion : respuestaDerechoDePeticion,
         fechaRespuestaDerechoDePeticion : fechaRespuestaDerechoDePeticion,
         fechaSolicitudTiempoDerechoPeticion : fechaSolicitudTiempoDerechoPeticion,
         segundaRespuestaDerechoPeticion : segundaRespuestaDerechoPeticion,
+        justificacionDerechoDePeticion : justificacionDerechoDePeticion,
         contenidoRespuestaDerechoPeticion: contenidoRespuestaDerechoPeticion,
         respuestaTiempoAdicional: respuestaTiempoAdicional,
         fechaRespuestaDerechoDePeticionTAdicional: fechaRespuestaDerechoDePeticionTAdicional,

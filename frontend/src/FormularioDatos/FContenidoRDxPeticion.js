@@ -5,31 +5,31 @@ import React from "react";
 function FContenidoRDxPeticion(props){
 
     if(props.contenidoRespuestaDerechoPeticion == 0){
-        return(null)
+        props.setJustificacionDerechoDePeticion('_____________')
+        return(null) 
     }
     else if(props.contenidoRespuestaDerechoPeticion == 1){
+        
         return(
-            <form class="form-group">
+            <form class="form-group"> 
                 <label>¿Qué solicitud faltó por resolver?</label>
-                <textarea></textarea>
+                <textarea id="textAreaIncompleto" onChange={()=>{props.setJustificacionDerechoDePeticion(document.getElementById('textAreaIncompleto').value)}}></textarea>
             </form>
         )
     }
     else if(props.contenidoRespuestaDerechoPeticion == 2){
         return(
             <form class="form-group">
-                <label>¿Por qué no hubo una respuesta al fondo del asunto?</label>
-                <textarea></textarea>
+                <label>¿Por qué la respuesta es evasiva y no resuelve de fonto la petición?</label>
+                <textarea id="textAreaEvasivas" onChange={()=>{props.setJustificacionDerechoDePeticion(document.getElementById('textAreaEvasivas').value)}}></textarea>
             </form>
         )
     }
     else if(props.contenidoRespuestaDerechoPeticion == 3){
         return(
             <form class="form-group">
-                <label>¿Qué solicitud faltó por resolver?</label>
-                <textarea></textarea>
-                <label>¿Por qué no hubo una respuesta al fondo del asunto?</label>
-                <textarea></textarea>
+                <label>¿Por qué la respuesta es incompleta, con evasivas y sin resolver de fondo?</label>
+                <textarea id="textAreaEvasivasIncompleta" onChange={()=>{props.setJustificacionDerechoDePeticion(document.getElementById('textAreaEvasivasIncompleta').value)}}></textarea>
             </form>        
             )
     }
@@ -37,7 +37,7 @@ function FContenidoRDxPeticion(props){
         return(
            <div>
                 <label>¿Cuánto tiempo adicional solicitó?</label>
-                <input></input>
+                <input id="textInput" onChange={()=>{props.setJustificacionDerechoDePeticion(document.getElementById('textInput').value)}}></input>
                 <label>¿Se contestó el Derecho de Petición dentro de ese término?</label>
                 <select id="respuestaTiempoAdicional" onClick={()=>props.setRespuestaTiempoAdicional(document.getElementById('respuestaTiempoAdicional').value)}>
                     <option value={0}>No</option>

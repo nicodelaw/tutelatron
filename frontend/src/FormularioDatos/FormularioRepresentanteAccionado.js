@@ -11,7 +11,7 @@ function FormularioRepresentanteAccionado (props){
                 <input class="form-control-file" id='nombreRepresentanteAccionadoID' onChange={()=>props.setnombreRepresentanteAccionado(document.getElementById('nombreRepresentanteAccionadoID').value) }></input>
                 <label>Tipo de documento Representante:</label>
                 <select id='tipoDocumentoRepresentanteAccionado' onChange={()=>{props.settipoDocumentoRepresentanteAccionado(document.getElementById('tipoDocumentoRepresentanteAccionado').value) }}>
-                    <option value='Sin documento'>Seleccionar</option>            
+                    <option value='__________'>Seleccionar</option>            
                     <option value='Cédula de Ciudadanía'>Cédula de ciudadanía</option>
                     <option value='Pasaporte'>Pasaporte</option>
                 </select>

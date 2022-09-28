@@ -14,7 +14,7 @@ const FormularioDatosIdentificacionAccionante = (props) =>{
             <input class="form-control-file" id='nombreAccionanteID' onChange={()=>props.setnombreAccionante(document.getElementById('nombreAccionanteID').value) }></input>
             <label>Tipo de documento:</label>
             <select id='tipoDocumentoAccionante' onChange={()=>{props.settipoDocumentoAccionante(document.getElementById('tipoDocumentoAccionante').value) }}>
-                <option value='Sin documento'>Seleccionar</option>            
+                <option value='____________'>Seleccionar</option>            
                 <option value='Cédula de Ciudadanía'>Cédula de ciudadanía</option>
                 <option value='Tarjeta de Identidad'>Tarjeta de Identidad</option>
                 <option value='Pasaporte'>Pasaporte</option>

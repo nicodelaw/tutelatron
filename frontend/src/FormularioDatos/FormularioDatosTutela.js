@@ -12,13 +12,21 @@ const FormularioDatosTutela = (props) =>{
             </select>
             <label>Tipo de Derecho de Petición radicado:</label>
             <select  id="tipoDerechoDePeticionOption" onClick={()=>props.setTipoDerechoDePeticion(document.getElementById('tipoDerechoDePeticionOption').value)}>
-                <option value='Seleccionar'>Seleccionar</option>            
+                <option value='__________'>Seleccionar</option>            
                 <option value='SolicitudInformacion' >Solicitud de Información</option>
                 <option value='SolicitudDocumentos' >Solicitud de Documentos</option>
                 <option value='SolicitudConsulta' >Consulta</option>
             </select>
             <FDSolicitudDxPeticion 
                 tipoDerechoDePeticion={props.tipoDerechoDePeticion}
+                contenidoRespuestaDerechoPeticionTEXTO={props.contenidoRespuestaDerechoPeticionTEXTO}
+                tipoDerechoDePeticionInformacion={props.tipoDerechoDePeticionInformacion}
+                tipoDerechoDePeticionDocumentos={props.tipoDerechoDePeticionDocumentos}
+                tipoDerechoDePeticionConsulta={props.tipoDerechoDePeticionConsulta}
+                setTipoDerechoDePeticionInformacion={tipoDerechoDePeticionInformacion=>props.setTipoDerechoDePeticionInformacion(tipoDerechoDePeticionInformacion)}
+                setTipoDerechoDePeticionDocumentos={tipoDerechoDePeticionDocumentos=>props.setTipoDerechoDePeticionDocumentos(tipoDerechoDePeticionDocumentos)}
+                setTipoDerechoDePeticionConsulta={tipoDerechoDePeticionConsulta=>props.setTipoDerechoDePeticionConsulta(tipoDerechoDePeticionConsulta)}
+                setContenidoRespuestaDerechoPeticionTEXTO={contenidoRespuestaDerechoPeticionTEXTO =>props.setContenidoRespuestaDerechoPeticionTEXTO(contenidoRespuestaDerechoPeticionTEXTO)}
             />
             <label>Fecha de radicación del Derecho de Petición:</label>
             <input 
