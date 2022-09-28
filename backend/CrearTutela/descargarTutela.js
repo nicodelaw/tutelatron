@@ -49,6 +49,11 @@ const descargarTutela = (props) => {
 
         tipoTutela: `${props.tipoTutela}`,
         tipoDerechoDePeticion:`${props.tipoDerechoDePeticion}`,
+        tipoDerechoDePeticionInformacion : `${props.tipoDerechoDePeticionInformacion}`,
+        tipoDerechoDePeticionDocumentos : `${props.tipoDerechoDePeticionDocumentos}`,
+        tipoDerechoDePeticionConsulta : `${props.tipoDerechoDePeticionConsulta}`, 
+        justificacionDerechoDePeticion : `${props.justificacionDerechoDePeticion}`,
+        contenidoRespuestaDerechoPeticionTEXTO: `${props.contenidoRespuestaDerechoPeticionTEXTO}`,
         fechaRadicacionDerechoPeticion: `${props.fechaRadicacionDerechoPeticion}`,
         municipioRadicacionDerechoPeticion: `${props.municipioRadicacionDerechoPeticion}`,
         respuestaDerechoDePeticion:`${props.respuestaDerechoDePeticion}`,
@@ -65,7 +70,7 @@ const descargarTutela = (props) => {
         compression: "DEFLATE",
     });
     
-    fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+    fs.writeFileSync(path.resolve(__dirname, 'output.docx'), buf);
     };
 
 module.exports =  { descargarTutela };

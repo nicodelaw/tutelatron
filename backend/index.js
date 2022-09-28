@@ -20,6 +20,11 @@ app.post('/descargar', (req, res)=>{
     descargarTutela(req.body);
 })
 
+app.get('/download', (req, res)=>{
+    const file = `${__dirname}/CrearTutela/output.docx`;
+    res.download(file);
+  });
+
 app.listen(app.get('port'), ()=>{
     console.log(`Conectado al puerto ${app.get('port')}`)
 });
