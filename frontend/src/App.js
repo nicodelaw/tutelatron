@@ -9,6 +9,8 @@ import { FContenidoRDxPeticion } from './FormularioDatos/FContenidoRDxPeticion';
 import { FContenidoRDxPeticionTiempoAdicional } from './FormularioDatos/FContenidoRDxPeticionTiempoAdicional';
 import { BotonDescarga } from './FormularioDatos/BotonDescarga';
 import { Nav } from './FormularioDatos/Nav';
+import { Hero } from './FormularioDatos/Hero';
+import { Footer } from './FormularioDatos/Footer';
 
 function App(props) {
   
@@ -65,6 +67,7 @@ function App(props) {
   return (
     <div className="App">
       <Nav></Nav>
+      <Hero></Hero>
       <form class="d-flex align-items-center flex-column bg-light" id='formularioCreacion' onSubmit={(event)=>{event.preventDefault()}}>
        
         <h1>Datos accionante:</h1>
@@ -198,6 +201,7 @@ function App(props) {
           contenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional}
         />
       </form>
+      <Footer></Footer>
     </div>
   );
 }

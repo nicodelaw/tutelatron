@@ -1,0 +1,11 @@
+:root{
+    --white:#FFFFFF;
+    --black:#000000;
+    --green:#28A162;
+  }
+
+
+#nav{
+    background-color: var(--green);
+}
+
