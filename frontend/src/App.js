@@ -10,6 +10,7 @@ import { FContenidoRDxPeticionTiempoAdicional } from './FormularioDatos/FConteni
 import { BotonDescarga } from './FormularioDatos/BotonDescarga';
 import { Nav } from './FormularioDatos/Nav';
 import { Hero } from './FormularioDatos/Hero';
+import { Descripcion } from './FormularioDatos/Descripcion';
 import { Footer } from './FormularioDatos/Footer';
 
 function App(props) {
@@ -69,7 +70,7 @@ function App(props) {
       <Nav></Nav>
       <Hero></Hero>
       <form class="d-flex align-items-center flex-column bg-light" id='formularioCreacion' onSubmit={(event)=>{event.preventDefault()}}>
-       
+        <Descripcion></Descripcion>
         <h1>Datos accionante:</h1>
         <FormularioDatosIdentificacionAccionante 
           setnombreAccionante={nombreAccionante => setnombreAccionante(nombreAccionante)}

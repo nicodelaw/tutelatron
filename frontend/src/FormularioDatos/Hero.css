@@ -16,6 +16,7 @@
 .mb-10 {
   margin-bottom: 10.5rem !important;
 }
+
 .py-6 {
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important;
@@ -228,29 +229,3 @@
   }
 }
 
-.hcf-overlay::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(
-    var(--hcf-overlay-bg-color),
-    var(--hcf-overlay-opacity)
-  );
-  z-index: 0;
-}
-.hcf-overlay > * {
-  position: relative;
-  z-index: 1;
-}
-.hcf-transform {
-  transform: scale3d(1, 1, 1);
-  transform-style: preserve-3d;
-  transition: all 0.5s;
-}
-.hcf-transform:hover {
-  transform: scale3d(1.02, 1.02, 1.02);
-}
