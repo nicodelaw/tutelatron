@@ -71,6 +71,7 @@ function App(props) {
       <Hero></Hero>
       <form class="d-flex align-items-center flex-column bg-light" id='formularioCreacion' onSubmit={(event)=>{event.preventDefault()}}>
         <Descripcion></Descripcion>
+        <br />
         <h1>Datos accionante:</h1>
         <FormularioDatosIdentificacionAccionante 
           setnombreAccionante={nombreAccionante => setnombreAccionante(nombreAccionante)}
@@ -92,7 +93,7 @@ function App(props) {
           setdireccionApoderadoAccionante={direccionApoderadoAccionante=>setdireccionApoderadoAccionante(direccionApoderadoAccionante)}
           setcorreoApoderadoAccionante={correoApoderadoAccionante=>setcorreoApoderadoAccionante(correoApoderadoAccionante)}
         />
-
+        <br />
         <h1>Datos accionado:</h1>
         <FormularioDatosIdentificacionAccionado 
           setnombreAccionado={nombreAccionado => setnombreAccionado(nombreAccionado)}
@@ -111,7 +112,7 @@ function App(props) {
           setdireccionRepresentanteAccionado={direccionRepresentanteAccionado=>setdireccionRepresentanteAccionado(direccionRepresentanteAccionado)}
           setcorreoRepresentanteAccionado={correoRepresentanteAccionado=>setcorreoRepresentanteAccionado(correoRepresentanteAccionado)}
         />
-
+        <br />
         <h1>Datos Tutela:</h1>
         <FormularioDatosTutela 
           tipoDerechoDePeticion={tipoDerechoDePeticion}
@@ -132,26 +133,26 @@ function App(props) {
           setFechaSolicitudTiempoDerechoPeticion={fechaSolicitudTiempoDerechoPeticion=>setFechaSolicitudTiempoDerechoPeticion(fechaSolicitudTiempoDerechoPeticion)}
           setSegundaRespuestaDerechoPeticion={segundaRespuestaDerechoPeticion=>setSegundaRespuestaDerechoPeticion(segundaRespuestaDerechoPeticion)}
         />
-        
+        <br />     
         <FRespuestaDxPeticion 
           respuestaDerechoDePeticion={respuestaDerechoDePeticion}
           setcontenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion=>setcontenidoRespuestaDerechoPeticion(contenidoRespuestaDerechoPeticion)}
           setFechaRespuestaDerechoDePeticion={fechaRespuestaDerechoDePeticion=>setFechaRespuestaDerechoDePeticion(fechaRespuestaDerechoDePeticion)}
         />
-
+        <br />
         <FContenidoRDxPeticion 
           contenidoRespuestaDerechoPeticion={contenidoRespuestaDerechoPeticion}
           justificacionDerechoDePeticion={justificacionDerechoDePeticion}
           setJustificacionDerechoDePeticion={justificacionDerechoDePeticion=>setJustificacionDerechoDePeticion(justificacionDerechoDePeticion)}
           setRespuestaTiempoAdicional={respuestaTiempoAdicional=>setRespuestaTiempoAdicional(respuestaTiempoAdicional)}
         />
-
+        <br />
         <FContenidoRDxPeticionTiempoAdicional 
           respuestaTiempoAdicional={respuestaTiempoAdicional}
           setFechaRespuestaDerechoDePeticionTAdicional={fechaRespuestaDerechoDePeticionTAdicional=>setFechaRespuestaDerechoDePeticionTAdicional(fechaRespuestaDerechoDePeticionTAdicional)}
           setContenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional=>setContenidoRespuestaPeticionTAdicional(contenidoRespuestaPeticionTAdicional)}
         />
-
+        <br />
         <BotonDescarga 
           nombreAccionante={nombreAccionante}
           tipoDocumentoAccionante={tipoDocumentoAccionante}
@@ -202,6 +203,7 @@ function App(props) {
           contenidoRespuestaPeticionTAdicional={contenidoRespuestaPeticionTAdicional}
         />
       </form>
+      <br />
       <Footer></Footer>
     </div>
   );

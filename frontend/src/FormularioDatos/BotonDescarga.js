@@ -19,38 +19,31 @@ const BotonDescarga = (props) => {
     if (botonDescarga==false){
         return(
             <div>
-            <button action="/descargar" method="post" type="submit"
-                    onClick={()=>{
-                       enviaralBackend(props);
-                       intervaloDescarga()
-                    }}
-                    className="botonCrear"
-                >
-                        Crear Tutela
-            </button>    
+                <br />
+                <button action="/descargar" method="post" type="submit"
+                        onClick={()=>{
+                        enviaralBackend(props);
+                        intervaloDescarga()
+                        }}
+                        className="botonCrear"
+                        class="btn btn-dark"
+                    >
+                            Crear Tutela
+                </button>    
             </div>
         );
     } else{
         return(
             <div>
-            <button action="/descargar" method="post" type="submit"
+                <br />
+                <button className="botonDescarga" class="btn btn-success"
                     onClick={()=>{
-                       enviaralBackend(props);
-                       intervaloDescarga();
+                        window.location.href="http://localhost:3000/download"
+                        setBotonDescarga(false);
                     }}
-                    className="botonCrear"
                 >
-                        Crear Tutela
-            </button> 
-            <button className="botonDescarga"
-                onClick={()=>{
-                    window.location.href="http://localhost:3000/download"
-                    setBotonDescarga(false);
-                }}
-            >
-                Descargar
-            </button>
-            
+                    Descargar
+                </button>    
             </div>    
         );
     }    

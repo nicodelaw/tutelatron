@@ -6,23 +6,3 @@
 div{
     flex-direction: column;
 }
-
-.botonCrear{
-    border: solid;
-    border-radius: 30%;
-    border-color: red;
-    background-color: red;
-    color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 10px;
-}
-
-.botonDescarga{
-    border: solid;
-    border-radius: 30%;
-    border-color: royalblue;
-    background-color: royalblue;
-    color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 10px;
-}

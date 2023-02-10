@@ -1,6 +1,19 @@
 #cabeza{
     width: 20%;
 }
+
+#heroTitulo{
+  color: #28A162;
+}
+
+#heroTitulo strong{
+  color: black;
+}
+
+#botonEmpezar{
+  background-color: #28A162;
+  color: white
+}
 .mb-6 {
   margin-bottom: 4.5rem !important;
 }
